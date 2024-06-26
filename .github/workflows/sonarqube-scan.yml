@@ -3,7 +3,7 @@ name: Run Sonar_Qube with Maven
 on:
   push:
     branches:
-      - develop
+      - master
 
 jobs:
   build:
