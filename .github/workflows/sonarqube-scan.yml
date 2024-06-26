@@ -1,6 +1,9 @@
 name: Run Sonar_Qube with Maven
 
-on: push
+on:
+  push:
+    branches:
+      - develop
 
 jobs:
   build:
@@ -16,5 +19,5 @@ jobs:
     - name: Build with Maven cloud
       run:  mvn -B verify sonar:sonar -Dsonar.projectKey=javareachabilityy -Dsonar.organization=javareachabilityy -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONARCLOUD_TOKEN
       env:
-        GIT_HUB_TOKEN: ${{ secrets.GIT_HUB_TOKEN }}
-        SONARCLOUD_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}
+        GIT_HUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+        SONARCLOUD_TOKEN: ${{ secrets.SONAR_TOKEN }}
